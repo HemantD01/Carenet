@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CareNet – Your Health, Connected</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+ 
+<!-- ════════════════════════════════════
+     NAVIGATION
+════════════════════════════════════ -->
+<nav>
+  <a class="nav-logo" href="#" onclick="showPage('home')">
+    <div class="logo-icon">🏥</div>
+    CareNet</span>
+  </a>
+  <div class="nav-links">
+    <a href="#" onclick="showPage('home')">Home</a>
+    <a href="#" onclick="openAuthModal('patient')">Patient Portal</a>
+    <a href="#" onclick="openAuthModal('doctor')">Doctor Portal</a>
+    <a href="#" class="nav-cta btn" onclick="openAuthModal('patient')">Get Started</a>
+  </div>
+</nav>
+ 
+<!-- ════════════════════════════════════
+     HOME PAGE
+════════════════════════════════════ -->
+<div id="page-home" class="page active">
+ 
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-left">
+      <div class="hero-badge">🇮🇳 Powered by ABHA ID &nbsp;·&nbsp; Built for India</div>
+      <h1 class="hero-title">
+        Your Health Records,<br><em>Always With You</em>
+      </h1>
+      <p class="hero-desc">
+        CareNet connects patients, doctors, and hospitals on one secure platform.
+        Access your complete medical history, book appointments, and get care — anywhere, anytime.
+      </p>
+      <div class="hero-btns">
+        <button class="btn btn-primary" onclick="openAuthModal('patient')">🧑‍⚕️ I'm a Patient</button>
+        <button class="btn btn-outline" onclick="openAuthModal('doctor')">👨‍⚕️ I'm a Doctor</button>
+      </div>
+    </div>
+ 
+    <!-- Floating visual cards -->
+    <div class="hero-visual">
+      <!-- Card 1: Patient summary -->
+      <div class="hero-card">
+        <div class="card-header">
+          <div class="card-avatar av-teal">👤</div>
+          <div class="card-info">
+            <h4>Priya Sharma</h4>
+            <p>ABHA: 12-3456-7890-1234</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-pill"><div class="num">12</div><div class="lbl">Records</div></div>
+          <div class="stat-pill"><div class="num">5</div><div class="lbl">Hospitals</div></div>
+          <div class="stat-pill"><div class="num">3</div><div class="lbl">Upcoming</div></div>
+        </div>
+      </div>
+      <!-- Card 2: Recent records -->
+      <div class="hero-card">
+        <div class="card-header">
+          <div class="card-avatar av-lavender">📋</div>
+          <div class="card-info">
+            <h4>Recent Medical Records</h4>
+            <p>Linked via ABHA ID</p>
+          </div>
+        </div>
+        <div class="record-list">
+          <div class="record-item">
+            <div class="record-icon ri-teal">🩸</div>
+            <div class="record-text"><div class="rt">Blood Test Report</div><div class="rs">AIIMS Delhi</div></div>
+            <div class="record-date">Today</div>
+          </div>
+          <div class="record-item">
+            <div class="record-icon ri-coral">💊</div>
+            <div class="record-text"><div class="rt">Prescription</div><div class="rs">City Hospital</div></div>
+            <div class="record-date">3d ago</div>
+          </div>
+          <div class="record-item">
+            <div class="record-icon ri-lavender">🫀</div>
+            <div class="record-text"><div class="rt">ECG Report</div><div class="rs">Apollo</div></div>
+            <div class="record-date">1w ago</div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3: Doctor -->
+      <div class="hero-card">
+        <div class="card-header">
+          <div class="card-avatar av-coral">👨‍⚕️</div>
+          <div class="card-info">
+            <h4>Dr. Arjun Mehta</h4>
+            <p>Cardiologist · Apollo Hospital</p>
+          </div>
+        </div>
+        <div class="stat-row">
+          <div class="stat-pill"><div class="num">4.9⭐</div><div class="lbl">Rating</div></div>
+          <div class="stat-pill"><div class="num">12yr</div><div class="lbl">Experience</div></div>
+          <div class="stat-pill"><div class="num">Available</div><div class="lbl">Today</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Features -->
+  <section class="features-section">
+    <div class="section-label">Everything You Need</div>
+    <h2 class="section-title">Healthcare Made Simple</h2>
+    <p class="section-sub">A complete platform for patients, doctors, and hospitals — all in one place.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feat-icon fi-teal">🗂️</div>
+        <h3>Centralized Health Records</h3>
+        <p>Access all your medical reports from different hospitals in one unified place, linked securely to your ABHA ID.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon fi-coral">📅</div>
+        <h3>Easy Appointment Booking</h3>
+        <p>Search for doctors by specialization or location, check availability, and book appointments in seconds.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon fi-lavender">🔒</div>
+        <h3>Secure &amp; Private</h3>
+        <p>Your health data is encrypted and protected. Only you and your authorized doctors can access your records.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon fi-amber">📤</div>
+        <h3>Doctor Report Upload</h3>
+        <p>Doctors and hospitals upload diagnoses, prescriptions, and reports directly — automatically linked to the patient.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon fi-sky">🏥</div>
+        <h3>Multi-Hospital Support</h3>
+        <p>Records from AIIMS, Apollo, Fortis, government hospitals — all accessible from a single dashboard.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feat-icon fi-pink">🆘</div>
+        <h3>SOS Emergency Feature</h3>
+        <p>In case of emergencies, instantly share your medical history with first responders with one tap.</p>
+      </div>
+    </div>
+  </section>
+ 
+  <!-- Portal CTA -->
+  <section class="portal-cta">
+    <div class="portal-card portal-patient">
+      <div class="portal-emoji">🧑‍⚕️</div>
+      <h2>Patient Portal</h2>
+      <p>View your complete medical history, book appointments with top doctors, and manage your health journey.</p>
+      <ul>
+        <li>Access records from all hospitals</li>
+        <li>Book &amp; manage appointments</li>
+        <li>ABHA ID linked dashboard</li>
+        <li>SOS emergency feature</li>
+      </ul>
+      <button class="btn btn-primary" onclick="openAuthModal('patient')">Login as Patient</button>
+    </div>
+    <div class="portal-card portal-doctor">
+      <div class="portal-emoji">👨‍⚕️</div>
+      <h2>Doctor Portal</h2>
+      <p>Manage appointments, view patient histories, and upload medical reports all from your professional dashboard.</p>
+      <ul>
+        <li>View appointment requests</li>
+        <li>Access patient medical history</li>
+        <li>Upload reports &amp; prescriptions</li>
+        <li>Manage patient records</li>
+      </ul>
+      <button class="btn btn-coral" onclick="openAuthModal('doctor')">Login as Doctor</button>
+    </div>
+  </section>
+ 
+</div><!-- /page-home -->
+ 
+ 
+<!-- ════════════════════════════════════
+     PATIENT PORTAL
+════════════════════════════════════ -->
+<div id="page-patient" class="page">
+  <div class="portal-layout">
+ 
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-label">Patient Menu</div>
+      <button class="sidebar-link active" onclick="switchTab('p','dashboard',this)"><span class="s-icon">🏠</span> Dashboard</button>
+      <button class="sidebar-link" onclick="switchTab('p','records',this)"><span class="s-icon">📋</span> My Records</button>
+      <button class="sidebar-link" onclick="switchTab('p','find-doctors',this)"><span class="s-icon">🔍</span> Find Doctors</button>
+      <button class="sidebar-link" onclick="switchTab('p','appointments',this)"><span class="s-icon">📅</span> Appointments</button>
+      <div class="sidebar-label">Account</div>
+      <button class="sidebar-link" onclick="switchTab('p','profile',this)"><span class="s-icon">👤</span> My Profile</button>
+      <button class="sidebar-link" onclick="logout()"><span class="s-icon">🚪</span> Logout</button>
+      <div class="sidebar-profile">
+        <div class="sp-avatar" id="p-avatar">P</div>
+        <div>
+          <div class="sp-name" id="p-sidebar-name">Loading…</div>
+          <div class="sp-abha" id="p-sidebar-abha">ABHA: —</div>
+        </div>
+      </div>
+    </aside>
+ 
+    <main class="main-content">
+ 
+      <!-- Dashboard Tab -->
+      <div id="p-tab-dashboard" class="portal-tab">
+        <div class="page-header">
+          <h1 id="p-welcome-heading">Welcome back 👋</h1>
+          <p id="p-dashboard-date">Loading your health summary…</p>
+        </div>
+        <div class="sos-banner">
+          <div class="sos-text">
+            <h3>🆘 Emergency SOS</h3>
+            <p>Instantly share your medical history &amp; blood group with emergency responders</p>
+          </div>
+          <button class="sos-btn" onclick="showToast('🆘 SOS Alert sent! Help is on the way.')">Activate SOS</button>
+        </div>
+        <div class="dash-grid">
+          <div class="dash-card">
+            <div class="dc-top"><div class="dc-icon fi-teal">📋</div></div>
+            <div class="dc-num" id="p-stat-records">—</div>
+            <div class="dc-label">Total Records</div>
+            <div class="dc-trend" id="p-stat-records-sub">Loading…</div>
+          </div>
+          <div class="dash-card">
+            <div class="dc-top"><div class="dc-icon fi-sky">📅</div></div>
+            <div class="dc-num" id="p-stat-appts">—</div>
+            <div class="dc-label">Upcoming Appointments</div>
+            <div class="dc-trend" id="p-stat-appts-sub">Loading…</div>
+          </div>
+          <div class="dash-card">
+            <div class="dc-top"><div class="dc-icon fi-coral">🏥</div></div>
+            <div class="dc-num" id="p-stat-hospitals">—</div>
+            <div class="dc-label">Hospitals Visited</div>
+            <div class="dc-trend" id="p-stat-hospitals-sub">Loading…</div>
+          </div>
+          <div class="dash-card">
+            <div class="dc-top"><div class="dc-icon fi-lavender">👨‍⚕️</div></div>
+            <div class="dc-num" id="p-stat-doctors">—</div>
+            <div class="dc-label">Doctors Consulted</div>
+            <div class="dc-trend" id="p-stat-doctors-sub">Loading…</div>
+          </div>
+        </div>
+        <div class="content-row">
+          <div class="content-card">
+            <div class="cc-header">
+              <h3>Upcoming Appointments</h3>
+              <button class="btn btn-sm btn-outline" onclick="switchTab('p','find-doctors',document.querySelectorAll('#page-patient .sidebar-link')[2])">Book New</button>
+            </div>
+            <div class="cc-body" id="p-dash-appts">
+              <p style="color:var(--text-soft);font-size:0.88rem;padding:10px 0">⏳ Loading…</p>
+            </div>
+          </div>
+          <div class="content-card">
+            <div class="cc-header">
+              <h3>Recent Records</h3>
+              <button class="btn btn-sm btn-outline" onclick="switchTab('p','records',document.querySelectorAll('#page-patient .sidebar-link')[1])">View All</button>
+            </div>
+            <div class="cc-body" id="p-dash-records">
+              <p style="color:var(--text-soft);font-size:0.88rem;padding:10px 0">⏳ Loading…</p>
+            </div>
+          </div>
+        </div>
+      </div><!-- /p-tab-dashboard -->
+ 
+      <!-- Records Tab -->
+      <div id="p-tab-records" class="portal-tab" style="display:none">
+        <div class="page-header">
+          <h1>My Medical Records</h1>
+          <p>All records linked to your ABHA ID across hospitals</p>
+        </div>
+        <div class="search-box">
+          <div class="search-row">
+            <input class="search-input" placeholder="🔍  Search records by hospital, doctor, or type…"/>
+            <button class="btn btn-primary btn-sm">Search</button>
+          </div>
+          <div class="filter-chips">
+            <button class="chip active">All</button>
+            <button class="chip">Blood Tests</button>
+            <button class="chip">Prescriptions</button>
+            <button class="chip">Radiology</button>
+            <button class="chip">Cardiology</button>
+            <button class="chip">Dermatology</button>
+          </div>
+        </div>
+        <div class="content-card">
+          <div class="cc-header"><h3>12 Records Found</h3></div>
+          <!-- Populated by JS -->
+          <div class="cc-body" id="records-list"></div>
+        </div>
+      </div><!-- /p-tab-records -->
+ 
+      <!-- Find Doctors Tab -->
+      <div id="p-tab-find-doctors" class="portal-tab" style="display:none">
+        <div class="page-header">
+          <h1>Find Doctors</h1>
+          <p>Search from 2,400+ verified doctors across India</p>
+        </div>
+        <div class="search-box">
+          <div class="search-row">
+            <input class="search-input" placeholder="🔍  Search by name, specialization, or hospital…"/>
+            <input class="search-input" style="max-width:200px" placeholder="📍 Location"/>
+            <button class="btn btn-primary btn-sm">Search</button>
+          </div>
+          <div class="filter-chips">
+            <button class="chip active">All</button>
+            <button class="chip">Cardiologist</button>
+            <button class="chip">Dermatologist</button>
+            <button class="chip">Neurologist</button>
+            <button class="chip">General Physician</button>
+            <button class="chip">Orthopedic</button>
+          </div>
+        </div>
+        <!-- Populated by JS -->
+        <div class="doctors-grid" id="doctors-grid"></div>
+      </div><!-- /p-tab-find-doctors -->
+ 
+      <!-- Appointments Tab -->
+      <div id="p-tab-appointments" class="portal-tab" style="display:none">
+        <div class="page-header">
+          <h1>My Appointments</h1>
+          <p>View and manage all your appointments</p>
+        </div>
+        <div class="appt-full">
+          <table class="af-table">
+            <thead>
+              <tr><th>Doctor</th><th>Specialization</th><th>Hospital</th><th>Date</th><th>Time</th><th>Status</th><th>Action</th></tr>
+            </thead>
+            <tbody id="p-appt-tbody"><tr><td colspan="7" style="padding:18px;color:var(--text-soft)">⏳ Loading…</td></tr></tbody>
+          </table>
+        </div>
+      </div><!-- /p-tab-appointments -->
+ 
+      <!-- Profile Tab -->
+      <div id="p-tab-profile" class="portal-tab" style="display:none">
+        <div class="page-header"><h1>My Profile</h1><p>Your personal and health information</p></div>
+        <div class="upload-form" style="max-width:640px">
+          <div class="form-grid">
+            <div class="form-group"><div class="form-label">Full Name</div><input id="profile-name" class="form-input" value=""/></div>
+            <div class="form-group"><div class="form-label">ABHA ID</div><input id="profile-abha" class="form-input" value="" readonly style="background:#e8f8f3;color:#2db89e;font-weight:800"/></div>
+            <div class="form-group"><div class="form-label">Phone</div><input id="profile-phone" class="form-input" value=""/></div>
+            <div class="form-group"><div class="form-label">Age</div><input id="profile-age" class="form-input" value="" type="number"/></div>
+            <div class="form-group"><div class="form-label">Gender</div>
+              <select class="form-select"><option>Female</option><option>Male</option><option>Other</option></select>
+            </div>
+            <div class="form-group"><div class="form-label">Blood Group</div>
+              <select class="form-select"><option>B+</option><option>A+</option><option>O+</option><option>AB+</option></select>
+            </div>
+            <div class="form-group full"><div class="form-label">Allergies / Medical Notes</div>
+              <textarea id="profile-notes" class="form-textarea"></textarea>
+            </div>
+          </div>
+          <div style="margin-top:22px">
+            <button class="btn btn-primary" onclick="savePatientProfile()">Save Changes</button>
+          </div>
+        </div>
+      </div><!-- /p-tab-profile -->
+ 
+    </main>
+  </div>
+</div><!-- /page-patient -->
+ 
+ 
+<!-- ════════════════════════════════════
+     DOCTOR PORTAL
+════════════════════════════════════ -->
+<div id="page-doctor" class="page">
+  <div class="portal-layout">
+ 
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-label">Doctor Menu</div>
+      <button class="sidebar-link active" onclick="switchTab('d','dashboard',this)"><span class="s-icon">🏠</span> Dashboard</button>
+      <button class="sidebar-link" onclick="switchTab('d','appointments',this)"><span class="s-icon">📅</span> Appointments</button>
+      <button class="sidebar-link" onclick="switchTab('d','patients',this)"><span class="s-icon">👥</span> My Patients</button>
+      <button class="sidebar-link" onclick="switchTab('d','upload',this)"><span class="s-icon">📤</span> Upload Report</button>
+      <div class="sidebar-label">Account</div>
+      <button class="sidebar-link" onclick="switchTab('d','profile',this)"><span class="s-icon">👤</span> My Profile</button>
+      <button class="sidebar-link" onclick="logout()"><span class="s-icon">🚪</span> Logout</button>
+      <div class="sidebar-profile">
+        <div class="sp-avatar" style="background:var(--coral)" id="d-avatar">D</div>
+        <div>
+          <div class="sp-name" id="d-sidebar-name">Loading…</div>
+          <div class="sp-abha" id="d-sidebar-spec">Loading…</div>
+        </div>
+      </div>
+    </aside>
+ 
+    <main class="main-content">
+ 
+      <!-- Doctor Dashboard Tab -->
+      <div id="d-tab-dashboard" class="portal-tab">
+        <div class="page-header">
+          <h1 id="d-welcome-heading">Doctor Dashboard 👨‍⚕️</h1>
+          <p id="d-dashboard-subtitle">Loading your dashboard…</p>
+        </div>
+        <div class="dash-grid">
+          <div class="dash-card">
+            <div class="dc-top"><div class="dc-icon fi-teal">📅</div></div>
+            <div class="dc-num" id="d-stat-today">—</div>
+            <div class="dc-label">Today's Appointments</div>
+            <div class="dc-trend" id="d-stat-today-sub">Loading…</div>
+          </div>
+          <div class="dash-card">
+            <div class="dc-top"><div class="dc-icon fi-lavender">👥</div></div>
+            <div class="dc-num" id="d-stat-patients">—</div>
+            <div class="dc-label">Total Patients</div>
+            <div class="dc-trend" id="d-stat-patients-sub">Loading…</div>
+          </div>
+          <div class="dash-card">
+            <div class="dc-top"><div class="dc-icon fi-coral">📤</div></div>
+            <div class="dc-num" id="d-stat-reports">—</div>
+            <div class="dc-label">Reports Uploaded</div>
+            <div class="dc-trend" id="d-stat-reports-sub">Loading…</div>
+          </div>
+          <div class="dash-card">
+            <div class="dc-top"><div class="dc-icon fi-amber">⭐</div></div>
+            <div class="dc-num" id="d-stat-rating">—</div>
+            <div class="dc-label">Average Rating</div>
+            <div class="dc-trend" id="d-stat-rating-sub">Loading…</div>
+          </div>
+        </div>
+        <div class="content-row">
+          <div class="content-card">
+            <div class="cc-header">
+              <h3>Today's Appointments</h3>
+              <button class="btn btn-sm btn-outline" onclick="switchTab('d','appointments',document.querySelectorAll('#page-doctor .sidebar-link')[1])">See All</button>
+            </div>
+            <div class="cc-body" id="d-dash-today">
+              <p style="color:var(--text-soft);font-size:0.88rem;padding:10px 0">⏳ Loading…</p>
+            </div>
+          </div>
+          <div class="content-card">
+            <div class="cc-header"><h3>Quick Actions</h3></div>
+            <div class="cc-body" style="display:flex;flex-direction:column;gap:12px">
+              <button class="btn btn-primary" style="width:100%;justify-content:center" onclick="switchTab('d','upload',document.querySelectorAll('#page-doctor .sidebar-link')[3])">📤 Upload New Report</button>
+              <button class="btn btn-outline" style="width:100%;justify-content:center" onclick="switchTab('d','patients',document.querySelectorAll('#page-doctor .sidebar-link')[2])">👥 View All Patients</button>
+              <button class="btn btn-outline" style="width:100%;justify-content:center" onclick="showToast('📊 Generating monthly report…')">📊 Generate Monthly Report</button>
+              <button class="btn btn-outline" style="width:100%;justify-content:center" onclick="showToast('📤 Schedule shared with patients')">🗓️ Update Availability</button>
+            </div>
+          </div>
+        </div>
+      </div><!-- /d-tab-dashboard -->
+ 
+      <!-- Doctor Appointments Tab -->
+      <div id="d-tab-appointments" class="portal-tab" style="display:none">
+        <div class="page-header"><h1>Appointments</h1><p>Manage all patient appointments</p></div>
+        <div class="appt-full">
+          <table class="af-table">
+            <thead>
+              <tr><th>Patient</th><th>ABHA ID</th><th>Date</th><th>Time</th><th>Type</th><th>Status</th><th>Action</th></tr>
+            </thead>
+            <tbody id="d-appt-tbody"><tr><td colspan="7" style="padding:18px;color:var(--text-soft)">⏳ Loading…</td></tr></tbody>
+          </table>
+        </div>
+      </div><!-- /d-tab-appointments -->
+ 
+      <!-- Patients Tab -->
+      <div id="d-tab-patients" class="portal-tab" style="display:none">
+        <div class="page-header"><h1>My Patients</h1><p id="d-patients-subtitle">Loading patients…</p></div>
+        <div class="search-box">
+          <div class="search-row">
+            <input class="search-input" placeholder="🔍  Search by name or ABHA ID…"/>
+            <button class="btn btn-primary btn-sm">Search</button>
+          </div>
+        </div>
+        <div class="appt-full">
+          <table class="af-table">
+            <thead><tr><th>Patient</th><th>ABHA ID</th><th>Age</th><th>Last Visit</th><th>Records</th><th>Action</th></tr></thead>
+            <!-- Populated by JS -->
+            <tbody id="patient-rows"><tr><td colspan="6" style="padding:18px;color:var(--text-soft)">⏳ Loading…</td></tr></tbody>
+          </table>
+        </div>
+      </div><!-- /d-tab-patients -->
+ 
+      <!-- Upload Report Tab -->
+      <div id="d-tab-upload" class="portal-tab" style="display:none">
+        <div class="page-header"><h1>Upload Medical Report</h1><p>Reports are automatically linked to the patient's ABHA ID</p></div>
+        <div class="upload-form">
+          <div class="form-grid">
+            <div class="form-group">
+              <div class="form-label">Patient ABHA ID *</div>
+              <input id="upload-abha-id" class="form-input" placeholder="e.g. 12-3456-7890-1234"/>
+            </div>
+            <div class="form-group">
+              <div class="form-label">Report Type *</div>
+              <select id="upload-record-type" class="form-select">
+                <option value="">Select report type</option>
+                <option value="BLOOD_TEST">Blood Test</option>
+                <option value="PRESCRIPTION">Prescription</option>
+                <option value="ECG">ECG</option>
+                <option value="XRAY_RADIOLOGY">X-Ray / Radiology</option>
+                <option value="DIAGNOSIS_REPORT">Diagnosis Report</option>
+                <option value="DISCHARGE_SUMMARY">Discharge Summary</option>
+                <option value="MRI">MRI</option>
+                <option value="THYROID_PANEL">Thyroid Panel</option>
+                <option value="OTHER">Other</option>
+              </select>
+            </div>
+            <div class="form-group full">
+              <div class="form-label">Diagnosis</div>
+              <input id="upload-diagnosis" class="form-input" placeholder="e.g. Hypertension – Stage 1"/>
+            </div>
+            <div class="form-group full">
+              <div class="form-label">Prescription / Notes</div>
+              <textarea id="upload-prescription" class="form-textarea" placeholder="Write prescription details, dosage, and additional notes here…"></textarea>
+            </div>
+            <div class="form-group full">
+              <div class="form-label">Additional Notes</div>
+              <textarea id="upload-notes" class="form-textarea" placeholder="Any additional notes for the patient…"></textarea>
+            </div>
+            <div class="form-group full">
+              <div class="form-label">Upload Report File (Optional)</div>
+              <label for="upload-file" class="upload-zone" style="cursor:pointer;display:block">
+                <input type="file" id="upload-file" accept=".pdf,.jpg,.jpeg,.png"
+                  style="position:absolute;width:1px;height:1px;opacity:0;pointer-events:none"
+                  onchange="handleFileSelect(this)"/>
+                <div class="uz-icon">📎</div>
+                <p id="upload-file-label">Click to upload or drag &amp; drop</p>
+                <span>PDF, JPG, PNG up to 10MB</span>
+              </label>
+            </div>
+          </div>
+          <div style="margin-top:24px;display:flex;gap:12px">
+            <button class="btn btn-primary" onclick="submitUploadReport()">📤 Upload Report</button>
+            <button class="btn btn-outline" onclick="['upload-abha-id','upload-diagnosis','upload-prescription','upload-notes'].forEach(id=>{const e=document.getElementById(id);if(e)e.value=''});document.getElementById('upload-record-type').value='';document.getElementById('upload-file').value=''">Clear Form</button>
+          </div>
+        </div>
+      </div><!-- /d-tab-upload -->
+ 
+      <!-- Doctor Profile Tab -->
+      <div id="d-tab-profile" class="portal-tab" style="display:none">
+        <div class="page-header"><h1>My Profile</h1><p>Your professional information</p></div>
+        <div class="upload-form" style="max-width:640px">
+          <div class="form-grid">
+            <div class="form-group"><div class="form-label">Full Name</div><input id="d-profile-name" class="form-input" value=""/></div>
+            <div class="form-group"><div class="form-label">Specialization</div><input id="d-profile-spec" class="form-input" value=""/></div>
+            <div class="form-group"><div class="form-label">Hospital</div><input id="d-profile-hospital" class="form-input" value=""/></div>
+            <div class="form-group"><div class="form-label">Experience (Years)</div><input id="d-profile-exp" class="form-input" value="" type="number"/></div>
+            <div class="form-group"><div class="form-label">Phone</div><input id="d-profile-phone" class="form-input" value=""/></div>
+            <div class="form-group"><div class="form-label">Consultation Fee (₹)</div><input id="d-profile-fee" class="form-input" value="" type="number"/></div>
+            <div class="form-group full"><div class="form-label">About / Bio</div>
+              <textarea id="d-profile-bio" class="form-textarea"></textarea>
+            </div>
+          </div>
+          <div style="margin-top:22px">
+            <button class="btn btn-coral" onclick="savePatientProfile()">Save Changes</button>
+          </div>
+        </div>
+      </div><!-- /d-tab-profile -->
+ 
+    </main>
+  </div>
+</div><!-- /page-doctor -->
+ 
+ 
+<!-- ════════════════════════════════════
+     AUTH MODAL
+════════════════════════════════════ -->
+<div class="modal-overlay" id="auth-modal">
+  <div class="modal" style="position:relative">
+    <button class="modal-close" onclick="closeAuthModal()">✕</button>
+    <div style="font-size:2.5rem;margin-bottom:10px" id="modal-emoji">🧑‍⚕️</div>
+    <h2 id="modal-title">Patient Login</h2>
+    <p id="modal-desc">Access your health records and appointments</p>
+    <div class="modal-tabs">
+      <button class="modal-tab active" id="tab-login" onclick="switchAuthTab('login')">Login</button>
+      <button class="modal-tab" id="tab-register" onclick="switchAuthTab('register')">Register</button>
+    </div>
+ 
+    <!-- Patient Login -->
+    <div id="patient-login-form">
+      <div class="form-group" style="margin-bottom:14px">
+        <div class="form-label">Phone / ABHA ID</div>
+        <input class="form-input" style="width:100%" placeholder="Enter your phone or ABHA ID"/>
+      </div>
+      <div class="form-group" style="margin-bottom:22px">
+        <div class="form-label">Password</div>
+        <input class="form-input" style="width:100%" type="password" placeholder="••••••••"/>
+      </div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center" id="login-btn">Login →</button>
+    </div>
+ 
+    <!-- Patient Register -->
+    <div id="patient-register-form" style="display:none">
+      <div class="form-grid" style="gap:12px">
+        <div class="form-group"><div class="form-label">Full Name</div><input class="form-input" placeholder="Your full name"/></div>
+        <div class="form-group"><div class="form-label">ABHA ID</div><input class="form-input" placeholder="12-XXXX-XXXX-XXXX"/></div>
+        <div class="form-group"><div class="form-label">Phone</div><input class="form-input" placeholder="+91 XXXXX XXXXX"/></div>
+        <div class="form-group"><div class="form-label">Password</div><input class="form-input" type="password" placeholder="••••••••"/></div>
+      </div>
+      <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:18px" id="register-btn">Create Account →</button>
+    </div>
+ 
+    <!-- Doctor Login -->
+    <div id="doctor-login-form" style="display:none">
+      <div style="background:var(--coral-light);border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:0.82rem;font-weight:700;color:#c0503a;display:flex;align-items:center;gap:8px;">
+        🏥 Use your Doctor ID + registered email to login
+      </div>
+      <div class="form-group" style="margin-bottom:14px">
+        <div class="form-label">Doctor ID</div>
+        <input id="dlogin-code" class="form-input" style="width:100%" placeholder="e.g. DOC-LGA-20341"/>
+      </div>
+      <div class="form-group" style="margin-bottom:14px">
+        <div class="form-label">Registered Email</div>
+        <input id="dlogin-email" class="form-input" style="width:100%" type="email" placeholder="doctor@hospital.com"/>
+      </div>
+      <div class="form-group" style="margin-bottom:22px">
+        <div class="form-label">Password</div>
+        <input id="dlogin-password" class="form-input" style="width:100%" type="password" placeholder="••••••••"/>
+      </div>
+      <button class="btn btn-coral" style="width:100%;justify-content:center" id="doctor-login-btn">Login →</button>
+    </div>
+ 
+    <!-- Doctor Register -->
+    <div id="doctor-register-form" style="display:none">
+      <div style="background:var(--coral-light);border-radius:10px;padding:10px 14px;margin-bottom:16px;font-size:0.82rem;font-weight:700;color:#c0503a;display:flex;align-items:center;gap:8px;">
+        🏥 Fill all fields — your Doctor ID will be shown after registration
+      </div>
+      <div class="form-grid" style="gap:12px">
+        <div class="form-group"><div class="form-label">Full Name *</div><input id="dreg-name" class="form-input" placeholder="Dr. Your Name"/></div>
+        <div class="form-group">
+          <div class="form-label">Specialization *</div>
+          <select id="dreg-spec" class="form-select">
+            <option value="">Select specialization</option>
+            <option value="Cardiologist">Cardiologist</option>
+            <option value="Dermatologist">Dermatologist</option>
+            <option value="Neurologist">Neurologist</option>
+            <option value="General Physician">General Physician</option>
+            <option value="Orthopedic">Orthopedic</option>
+            <option value="Pediatrician">Pediatrician</option>
+            <option value="Endocrinologist">Endocrinologist</option>
+            <option value="Oncologist">Oncologist</option>
+          </select>
+        </div>
+        <div class="form-group"><div class="form-label">Hospital Name *</div><input id="dreg-hospital" class="form-input" placeholder="e.g. Apollo Hospital, Delhi"/></div>
+        <div class="form-group"><div class="form-label">Hospital ID *</div><input id="dreg-hospitalid" class="form-input" placeholder="e.g. HOSP-APL-001"/></div>
+        <div class="form-group"><div class="form-label">Work Email *</div><input id="dreg-email" class="form-input" type="email" placeholder="doctor@hospital.com"/></div>
+        <div class="form-group"><div class="form-label">Medical License No.</div><input id="dreg-license" class="form-input" placeholder="e.g. MCI-DL-2015-XXXXX"/></div>
+        <div class="form-group"><div class="form-label">Password *</div><input id="dreg-password" class="form-input" type="password" placeholder="••••••••"/></div>
+        <div class="form-group"><div class="form-label">Confirm Password *</div><input id="dreg-confirm" class="form-input" type="password" placeholder="••••••••"/></div>
+      </div>
+      <button class="btn btn-coral" style="width:100%;justify-content:center;margin-top:18px" id="doctor-register-btn">Register as Doctor →</button>
+    </div>
+ 
+  </div>
+</div><!-- /auth-modal -->
+ 
+<!-- External JavaScript — loaded last so DOM is ready -->
+<script src="main.js"></script>
+ 
+</body>
+</html>
